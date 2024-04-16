@@ -1,0 +1,6 @@
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore app-release-unsigned.apk com.sabc.sabcnews
+
+zipalign -v 4 app-release-unsigned.apk sabcnews.apk
+
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore keystore.jks platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk upload

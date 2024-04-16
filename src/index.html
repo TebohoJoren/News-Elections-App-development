@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>SABC News</title>
+
+    <base href="/" />
+    <!-- only for ios -->
+
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;"
+    />
+    <meta name="color-scheme" content="light dark" />
+
+    <meta
+      name="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+
+    <!-- add to homescreen for ios -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <script src="https://cdn.jsdelivr.net/gh/thelevicole/youtube-to-html5-loader@4.0.1/dist/YouTubeToHtml5.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-52873651-37"
+    ></script>
+
+    <script
+      async
+      src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+    ></script>
+    <script>
+      window.googletag = window.googletag || { cmd: [] };
+      googletag.cmd.push(function () {
+        googletag
+          .defineSlot(
+            "/267159116/SABCDigitalNewsMobileLeaderboard2",
+            [320, 50],
+            "div-gpt-ad-1690132873606-0"
+          )
+          .addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.pubads().collapseEmptyDivs();
+        googletag.enableServices();
+      });
+    </script>
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-52873651-37");
+    </script>
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#1976d2" />
+
+    <style>
+      body {
+        position: relative;
+      }
+
+      .not-now {
+        position: absolute;
+        bottom: 10vh !important;
+        z-index: 100000 !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: fit-content;
+      }
+
+      div.vjs-modal-dialog-content {
+        display: none !important;
+      }
+    </style>
+    <!-- unpkg : use the latest version of Video.js -->
+    <!-- <link
+      href="https://unpkg.com/video.js/dist/video-js.min.css"
+      rel="stylesheet"
+    /> -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.2/plyr.css" />
+  </head>
+
+  <body>
+    <!-- /267159116/SABCDigitalNewsMobileLeaderboard2 -->
+
+    <div class="not-now">
+      <div
+        id="div-gpt-ad-1690132873606-0"
+        style="min-width: 320px; min-height: 50px"
+      >
+        <script>
+          googletag.cmd.push(function () {
+            googletag.display("div-gpt-ad-1690132873606-0");
+          });
+        </script>
+      </div>
+    </div>
+    <app-root></app-root>
+    <noscript
+      >Please enable JavaScript to continue using this application.</noscript
+    >
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <!-- <script src="//cdn.jsdelivr.net/npm/hls.js"></script> -->
+    <script src="https://cdn.plyr.io/3.7.2/plyr.js"></script>
+    <!-- <script src="https://unpkg.com/video.js/dist/video.min.js"></script> -->
+  </body>
+</html>

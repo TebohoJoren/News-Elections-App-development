@@ -1,0 +1,219 @@
+button {
+  width: 50%;
+  background-color: transparent;
+  margin-top: 1rem;
+}
+button.card-button{
+  width: 100%;
+  padding: 10px;
+  img{
+    border-radius: 20px;
+    border: 1px solid #0f0f63c9;
+  }
+  .title{
+    font-size: 15px;
+    color: #000;
+    font-weight: 500;
+  }
+}
+
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.bottomMargin {
+  margin-bottom: 10px;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: rgb(255, 30, 30);
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,
+.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: rgb(255, 30, 30);
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.inner-content {
+  max-height: 10vh;
+  overflow: auto;
+  padding: 10px;
+}
+
+#change-live-stream {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  button {
+    width: 9rem;
+    height: 2.1rem;
+    background: black;
+    color: white;
+    border-radius: 6px;
+
+    i {
+      display: none;
+    }
+  }
+
+  button.viewing {
+    transition: ease-in-out 0.3s;
+    i {
+      display: initial;
+      transition: ease-in-out 0.3s;
+    }
+  }
+}
+
+.video-js {
+  width: 100%;
+  min-height: 220px;
+}
+
+#player
+  > div.vjs-control-bar
+  > div.vjs-playback-rate.vjs-menu-button.vjs-menu-button-popup.vjs-control.vjs-button {
+  display: block;
+}
+
+div.vjs-modal-dialog-content {
+  display: none !important;
+}
+ion-toolbar.sec-tool {
+  border-radius: 0 0 20px 20px !important;
+}
+ion-toolbar.header-tool{
+  border-radius: 20px 20px 0 0 !important;
+}
+ion-list{
+  padding-top: 10px;
+}
+ion-row.top-action{
+  padding: 0px 5px 0px 5px;
+  ion-col{
+    // font-weight: bold;
+    // border-bottom: 5px solid #fff;
+    // background: grey;
+    // border-radius: 30px;
+    // margin: 5px;
+    font-weight: 700;
+    border-bottom: 2px solid #fff;
+    background: grey;
+    border-radius: 30px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px 0;
+    ion-label{
+      font-size: 10px;
+    }
+  }
+}
+
+.menu-button{
+  width: 30px;
+}
+.election-dropdown{
+  text-align: center;
+  margin-top: 10px;
+  // select{
+  //   border-radius: 20px;
+  //   background: #fff;
+  //   color: #000;
+  //   border: 1px solid #00000061;
+  //   outline: none;
+  // }
+  .select-selected {
+    border-radius: 100px;
+    border: 1px solid #006bb6;
+    background-color: transparent;
+    appearance: none;
+    background-image: url('../../assets/arrow-black.svg');
+    background-repeat: no-repeat;
+    background-position: right 13px center;
+    outline: none;
+    color: #000;
+    width: 85%;
+    margin-top: 10px;
+  }
+}
+ion-segment {
+  border: 1px solid #006bb6;
+  border-radius: 100px;
+  width: 94%;
+  // margin: 10px auto 0px;
+  margin: 20px auto 0;
+  background: white;
+  transform: scale(.9);
+}
+
+ion-segment ion-segment-button {
+  margin: 0;
+  --indicator-color: #006bb6;
+  transform: scale(1.1);
+}
+
+/* Material Design styles */
+ion-segment-button.md {
+--color: #000;
+--color-checked: #fff;
+--indicator-height: 4px;
+}
+
+/* iOS styles */
+ion-segment-button.ios {
+--color: #000;
+--color-checked: #fff;
+--border-radius: 0;
+}
+

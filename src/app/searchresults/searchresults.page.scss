@@ -1,0 +1,5 @@
+a.item-native {
+  padding-inline-start: calc(
+    var(--padding-start, 0px) + var(--ion-safe-area-left, 0px)
+  );
+}

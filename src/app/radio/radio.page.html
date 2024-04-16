@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button>
+        <img class="menu-button" src="/assets/menu.png" />
+      </ion-menu-button>
+      <!-- <ion-back-button></ion-back-button> -->
+    </ion-buttons>
+
+    <ion-title class="ion-no-padding">
+      <ion-row class="ion-padding">
+        <ion-col class="ion-no-padding">
+          <div class="sabc-radio-logo">
+            <img src="/assets/sabc-radio-logo.svg" style="width: 100%; height: auto" />
+          </div>
+        </ion-col>
+        <!--<ion-col>
+            <div class="sabc-share">
+               <ion-icon name="share" md="share"></ion-icon> 
+            </div>
+          </ion-col>-->
+      </ion-row>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <!-- <ion-item class="ion-no-padding">
+        <div
+          id="inner-content"
+          #RadioAd1>
+        </div>
+    </ion-item> -->
+    <ion-row>
+      <ion-col size="6" *ngFor="let radioArray of radios">
+        <ion-item class="ion-margin-bottom ion-no-padding" *ngFor="let channel of radioArray"
+          (click)="playRadioStation(channel)" lines="none">
+          <ion-avatar slot="start">
+            <img [src]="'/assets/radio-logos/' + channel.logo" /> </ion-avatar>{{ channel.name }}
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <!-- <ion-item class="ion-no-padding">
+          <div
+            id="inner-content"
+            #SAFM1>
+          </div>
+      </ion-item> -->
+
+    <!-- <ion-item class="ion-no-padding">
+        <div
+          id="inner-content"
+          #RadioAd2>
+        </div>
+    </ion-item> -->
+
+    <!-- <ion-row>
+        <ion-item class="ion-no-padding">
+          <ion-content scroll="true" overflow-scroll="true">
+          <div id="native-ad" style="width: 100%; height: 100px"></div>
+          </ion-content>
+        </ion-item>
+      </ion-row> -->
+  </ion-grid>
+</ion-content>

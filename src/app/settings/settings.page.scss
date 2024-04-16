@@ -1,0 +1,40 @@
+#settings {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+ion-item {
+  --padding-start: 8px;
+  padding-left: 0px;
+  margin-left: 0px;
+}
+
+ion-button {
+  z-index: 56;
+  position: relative;
+}
+ion-tab-button{
+  z-index: 105;
+  position: relative;
+}
+.radio-checked .radio-inner{
+  background-color: #000000 !important;
+}
+ion-tab-bar.hydrated {
+  z-index: 105;
+}
+
+.dropdown {
+  color: #000000;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown {
+  .item.sc-ion-label-ios-h,
+  .item .sc-ion-label-ios-h,
+  ion-label.sc-ion-label-ios-h.sc-ion-label-ios-s.hydrated,
+  ion-label.sc-ion-label-md-h.sc-ion-label-md-s.hydrated {
+    width: 100%;
+  }
+}

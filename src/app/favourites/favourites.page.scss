@@ -1,0 +1,10 @@
+a.item-native {
+  padding-inline-start: calc(
+    var(--padding-start, 0px) + var(--ion-safe-area-left, 0px)
+  );
+}
+ion-row.refresh {
+  font-size: 0.7rem;
+  color: #a3a3a3;
+  margin: 7px 32%;
+}

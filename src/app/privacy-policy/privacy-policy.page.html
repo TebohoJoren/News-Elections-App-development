@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button text=""> </ion-back-button>
+    </ion-buttons>
+    <ion-title  class="ion-no-padding">
+      <ion-row class="ion-padding">
+        <ion-col  class="ion-no-padding">
+          <div class="sabc-news-logo">
+            <img src="/assets/sabc-news-logo.svg" />
+          </div>
+          <div class="sabc-independant-impartial ion-float-right">
+            <img src="/assets/img-independent-impartial-logo.jpg" />
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="ion-float-right">
+            <ion-icon
+              button
+              name="search"
+              md="md-search"
+              [routerLink]="['/tabs/news/search']"
+              routerDirection="forward"
+            ></ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2>Privacy and Polices</h2>
+
+  
+  <h3>Disclaimer :</h3>
+
+  <div>
+    
+
+    <h4>1. Video Content In App</h4>
+    <p>i. The videos and content on this app are all supplied by YouTube and are located on SABC News channel on the platform <br>ii. Please Note that some of the content supplied by does not belong to SABC News and was uploaded by third parties <br> iii. Content is loaded to respectative playlist on the app as soon as it is loaded on the youtube platform <br> iv. 4. Please note that you might see ads from youtube when viewing the videos from time to time</p>
+    <a (click)="openYTChannel()">Visit Channel On YouTube</a>
+  </div>
+
+  <div>
+    
+
+    <h4>2. News Stories and Content</h4>
+    <p>i. All news, articles, titles, catergories, and stories are all sourced from the SABC News official website</p>
+    <a (click)="openNewsWesite()"> Visit NewsWebsite</a>
+  </div>
+
+  <div>
+    
+
+    <h4>3. SABC Policies</h4>
+    <p>i. More detailed policies can be found on the SABC website about terms and usage</p>
+    <a (click)="openNewsPolicies()">Visit SABC Policies</a>
+  </div>
+</ion-content>

@@ -1,0 +1,17 @@
+html {
+  width: 360px;
+  height: 100px;
+
+  body {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+
+    p {
+      font-size: 30px;
+    }
+  }
+}

@@ -1,0 +1,124 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button>
+        <img src="/assets/menu.png" />
+      </ion-menu-button>
+      <ion-back-button text=""> </ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-no-padding">
+      <ion-row class="ion-padding">
+        <ion-col class="ion-no-padding">
+          <div class="sabc-news-logo">
+            <img src="/assets/sabc-news-logo.svg" />
+          </div>
+          <div class="sabc-independant-impartial ion-float-right">
+            <img src="/assets/img-independent-impartial-logo.jpg" />
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="ion-float-right">
+            <ion-icon button name="search" md="md-search" [routerLink]="['/tabs/news/search']"
+              routerDirection="forward"></ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- GPT AdSlot 1 for Ad unit 'SABCDigitalNewsMobileLeaderboard1' ### Size: [[468,90]] -->
+  <div id='div-gpt-ad-9612400-1'>
+    <script>
+      googletag.cmd.push(function () { googletag.display('div-gpt-ad-9612400-1'); });
+    </script>
+  </div>
+  <!-- End AdSlot 1 -->
+
+  <!-- GPT AdSlot 2 for Ad unit 'SABCDigitalNewsMobileLeaderboard2' ### Size: [[425,90]] -->
+  <div id='div-gpt-ad-9612400-2'>
+    <script>
+      googletag.cmd.push(function () { googletag.display('div-gpt-ad-9612400-2'); });
+    </script>
+  </div>
+  <!-- End AdSlot 2 -->
+
+  <!-- GPT AdSlot 3 for Ad unit 'SABCDigitalNewsMobileLeaderboard3' ### Size: [[414,90]] -->
+  <div id='div-gpt-ad-9612400-3'>
+    <script>
+      googletag.cmd.push(function () { googletag.display('div-gpt-ad-9612400-3'); });
+    </script>
+  </div>
+  <!-- End AdSlot 3 -->
+
+  <!-- GPT AdSlot 4 for Ad unit 'SABCDigitalNewsMobileLeaderboard4' ### Size: [[580,90]] -->
+  <div id='div-gpt-ad-9612400-4'>
+    <script>
+      googletag.cmd.push(function () { googletag.display('div-gpt-ad-9612400-4'); });
+    </script>
+  </div>
+  <!-- End AdSlot 4 -->
+
+  <!-- GPT AdSlot 5 for Ad unit 'SABCDigitalNewsMobileLeaderboard5' ### Size: [[375,90]] -->
+  <div id='div-gpt-ad-9612400-5'>
+    <script>
+      googletag.cmd.push(function () { googletag.display('div-gpt-ad-9612400-5'); });
+    </script>
+  </div>
+  <!-- End AdSlot 5 -->
+
+  <!-- GPT AdSlot 6 for Ad unit 'SABCDigitalNewsMobileLeaderboard6' ### Size: [[480,90]] -->
+  <div id='div-gpt-ad-9612400-6'>
+    <script>
+      googletag.cmd.push(function () { googletag.display('div-gpt-ad-9612400-6'); });
+    </script>
+  </div>
+  <!-- End AdSlot 6 -->
+
+
+  <div id='newsad-1'>
+    <script>
+      window.googletag = window.googletag || { cmd: [] };
+      googletag.cmd.push(function () {
+        googletag.defineSlot('/267159116/SABCDigitalNewsMobileLeaderboard2', [[320, 50]], 'newsad-1').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.pubads().collapseEmptyDivs();
+        googletag.enableServices();
+        googletag.display('newsad-1');
+      });
+    </script>
+  </div>
+  <form #form="ngForm" id="settings" (ngSubmit)="updateSettings()" novalidate>
+    <h2>Settings</h2>
+    <h6>Please customise your settings below:</h6>
+    <ion-item>
+      <ion-label>High-Quality stream</ion-label>
+      <ion-checkbox name="highQuality" [(ngModel)]="highQuality" color="dark" slot="end"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Enlarge Text</ion-label>
+      <ion-checkbox name="text" [(ngModel)]="text" color="dark" slot="end"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-button fill="clear" class="dropdown" size="medium" (click)="viewRegions()">
+        <ion-label>Select Region</ion-label>
+
+        <div>{{ this.abbr }}</div>
+        <ion-icon name="arrow-dropdown"></ion-icon>
+      </ion-button>
+    </ion-item>
+
+    <ion-radio-group (ionChange)="onChangeHandler($event)" [hidden]="hideRegions">
+      <ion-item *ngFor="let region of regions">
+        <ion-label>{{ region.name }}</ion-label>
+        <ion-radio value="{{ region.id }}" [checked]="this.data === 'region.name'"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+
+    <ion-button type="submit" expand="full" color="dark">
+      <ion-ripple-effect></ion-ripple-effect>
+      Update
+    </ion-button>
+  </form>
+</ion-content>

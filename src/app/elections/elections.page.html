@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button text=""> </ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-padding">
+      <ion-row class="ion-padding">
+        <ion-col class="ion-padding">
+          <div class="sabc-news-logo">
+            <img src="/assets/sabc-news-logo.svg" />
+          </div>
+          <div class="sabc-independant-impartial ion-float-right">
+            <img src="/assets/img-independent-impartial-logo.jpg" />
+          </div>
+        </ion-col>
+        <ion-col> </ion-col>
+      </ion-row>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-toolbar
+  color="dark"
+  class="sub-nav"
+ 
+>
+  <div class="fixed bottomMargin">
+    <ion-row>
+      <ion-col size="6">    
+        <select placeholder="Year" [(ngModel)]="select_year" (change)="buildGraph()" class="select-selected">
+          <option value="1091">2021</option>
+          <option value="402">2016</option>
+          <option value="197">2011</option>
+      </select>
+      </ion-col>
+      <ion-col size="6">
+        <select placeholder="Province" [(ngModel)]="select_province" (change)="buildGraph()" class="select-selected">
+          <option value="EC">Eastern Cape</option>
+          <option value="GT">Gauteng</option>
+          <option value="FS">Free State</option>
+          <option value="LIM">Limpopo</option>
+          <option value="KZN">KwaZulu Natal</option>
+          <option value="NC">Northern Cape</option>
+          <option value="NW">Northern West</option>
+          <option value="MP">Mpumalanga</option>
+          <option value="WC">Western Cape</option>
+      </select>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <select placeholder="Results" [(ngModel)]="select_graph" (change)="buildGraph()" class="select-selected">
+          <option value="race_for_votes">Race for Votes</option>
+          <option value="race_for_votes/comparison">Comparison</option>
+          <option value="race_for_councils">Race for Councils</option>
+          <option value="map_municipalities">Map of Councils Won</option>
+          <option value="race_for_seats">Race for Seats</option>
+          <option value="race_for_wards">Race for Wards</option>
+          <option value="turnout">Turnout</option>
+          <option value="validspoilt">Valid vs Spoilt</option>
+      </select>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-toolbar>
+  
+<ion-content>
+  <iframe
+  src="https://elections.sabc.co.za/elections/_api/iframe.php"
+  id="graphframe"
+  style="height: 400px; width: 100%"
+  scrolling="no"
+  #graphframe></iframe>
+
+  <ion-button type="button" expand="full" color="dark" (click)="openURL()">
+    More Results Online
+  </ion-button>
+  <ion-button type="button" expand="full" color="dark" (click)="buildGraph()" *ngIf="1091">
+    Refresh
+  </ion-button>
+  <!--<br>
+  <div class="graph" #graph1 id="graph1"></div>
+  <br>
+  
+  <br>
+  <br>
+  <div #debug id="debug" style="padding:10px"></div>
+  -->
+</ion-content>

@@ -1,0 +1,397 @@
+// http://ionicframework.com/docs/theming/
+@import "~@ionic/angular/css/core.css";
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+.liveStream {
+  width: 100% !important;
+  height: 100vh !important;
+}
+html.large-font {
+  font-size: 135%;
+}
+
+ion-header,
+ion-toolbar.hydrated {
+  --background: #000;
+  --opacity: 1;
+  --color: white;
+  display: grid;
+  align-items: center;
+  z-index: 1;
+}
+
+ion-fab-button.ion-activatable.ion-focusable.hydrated {
+  --background: var(--ion-color-dark, #000000);
+  --color: var(--ion-color-primary, #ffffff);
+  --ripple-color: var(--ion-color-dark, #000000);
+  width: 3rem;
+  height: 3rem;
+  :host(.fab-button-close-active) .close-icon {
+    --background: var(--ion-color-danger: #f04141);
+    --color: var(--ion-color-dark, #000000);
+  }
+
+  ion-icon.hydrated {
+    position: absolute;
+  }
+}
+
+ion-menu-toggle {
+  ion-icon.hydrated {
+    font-size: 2rem;
+  }
+  .icon-inner,
+  svg {
+    fill: #000000;
+    -webkit-text-fill-color: #000000;
+  }
+}
+ion-tab-bar.hydrated {
+  ion-tab-button {
+    cursor: pointer;
+    background-color: #343a40;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  ion-label.menu {
+    cursor: pointer;
+    background-color: #000;
+    letter-spacing: 0.1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  --background: #343a40;
+  width: 100%;
+}
+.toolbar-container {
+  --padding-start: 0;
+  --padding-bottom: 0;
+}
+ion-toolbar.ion-color.ion-color-dark.toolbar-label.hydrated {
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+ion-item.in-list.item.ion-activatable.ion-focusable.hydrated {
+  font-size: 0.9rem;
+  a {
+    color: #000000;
+  }
+}
+.item.sc-ion-label-ios-h,
+.item .sc-ion-label-ios-h,
+ion-label.sc-ion-label-ios-h.sc-ion-label-ios-s.hydrated,
+ion-label.sc-ion-label-md-h.sc-ion-label-md-s.hydrated {
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.searchbar-input-container.sc-ion-searchbar-ios {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  border-radius: 0px;
+
+  ::-webkit-input-placeholder {
+    visibility: hidden;
+  }
+}
+
+.searchbar-input.sc-ion-searchbar-md,
+.searchbar-input.sc-ion-searchbar-ios {
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(196, 196, 196, 1);
+  -moz-box-shadow: 0px 5px 10px 0px rgba(196, 196, 196, 1);
+  box-shadow: 0px 5px 10px 0px rgba(196, 196, 196, 1);
+  border-bottom: 1px solid #c4c4c4;
+  border-radius: 0px;
+  background: #ffffff;
+}
+
+.isDark {
+  background-color: #000000;
+}
+
+ion-row.date {
+  font-size: 0.7rem;
+  color: rgb(163, 163, 163);
+  margin-top: 10px;
+}
+ion-row.title {
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  text-align: left;
+  line-height: initial;
+  font-size: 0.8rem;
+  color: #000000;
+}
+ion-title.title-ios.hydrated {
+  padding: 0;
+  display: inherit;
+}
+ion-icon.item-detail-icon {
+  display: none;
+}
+ion-thumbnail.hydrated {
+  display: inline;
+  width: 80px;
+  height: 80px;
+}
+.list-ios {
+  margin-bottom: 0;
+}
+body.theatre {
+  display: inline;
+}
+iframe {
+  border: 0;
+}
+
+.header-md:after {
+  height: 0;
+}
+.list-md {
+  padding-top: 0;
+}
+ion-tab-bar{
+  height:40px;}
+ion-tab-button {
+  color: #fff;
+  &.selected {
+    background-color: #000!important;
+    border-bottom: 2px solid #cb2026;
+    border-radius: 100px;
+    height: 40px;
+    color: #006bb6;;
+  }
+}
+
+.wp-caption.alignnone {
+  max-width: 1200px;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+
+  img {
+    border: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+blockquote.twitter-tweet {
+  font-style: italic;
+  margin: 1rem;
+}
+
+p a,
+a,
+p {
+  color: #000000;
+  font-size: 0.75rem;
+  line-height: 1.1rem;
+}
+
+.button-native {
+  background: var (--ion-background-color);
+}
+
+ion-tab-button {
+  &.tab-selected {
+    background-color: #000 !important;
+    color: #ffffff !important;
+    border-bottom: 5px solid #cb2026;
+  }
+}
+
+ion-grid {
+  .captionFirst {
+    font-size: 0.7rem;
+    line-height: 1rem;
+  }
+  .captionSecond {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 1rem;
+  }
+}
+
+.scrolling-wrapper {
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+  ion-col {
+    display: inline-block;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.fixed {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  margin-bottom: -3px;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+.overflow-hidden {
+  justify-content: left;
+  overflow: hidden;
+  width: 100%;
+}
+
+ion-toolbar.sub-nav {
+  overflow-x: scroll;
+  background: #000;
+  --ion-item-background: #000;
+  --ion-background-color: #000;
+
+  ion-list {
+    --ion-item-background: #000;
+    --ion-background-color: #000;
+    overflow-x: scroll;
+    padding: 0;
+  }
+}
+
+ion-col.selected,
+ion-label.selected,
+ion-button.selected {
+  font-weight: bold;
+  // border-bottom: 5px solid #cb2026 !important;
+  // border-bottom: 2px solid #ff1e1e !important;
+  border-bottom: 2px solid #fff !important;
+  background: #ff1e1e !important;
+  border-radius: 30px !important;
+  // height: 35px;
+}
+
+
+.sabc-radio-logo {
+  padding: 0;
+  width: 30%;
+  height: 40px;
+  margin: 0 auto;
+}
+.sabc-news-logo {
+  padding: 0;
+  width: 50%;
+  // margin-left: 30px; //remove for android build
+}
+
+.share-logo {
+  padding: 0;
+  width: 100%;
+}
+
+.sabc-independant-impartial {
+  display: flex;
+
+  img {
+    position: absolute;
+    top: 0.05rem;
+    width: 60%;
+  }
+}
+
+ion-button.button.button-medium.button-clear.ion-activatable.ion-focusable.hydrated,
+ion-toolbar.sub-nav.ion-color.ion-color-dark.toolbar-label.hydrated {
+  padding: 0;
+  margin: 0;
+  --min-height: auto;
+  padding: 0;
+  margin: 0;
+}
+
+.sabc-share {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  font-size: 1.7rem;
+  svg {
+    -webkit-text-fill-color: #000;
+  }
+}
+
+ion-label.submenu.sc-ion-label-md-h.sc-ion-label-md-s.hydrated {
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  font-size: 12px;
+}
+
+footer {
+  height: 3rem;
+  background: transparent;
+  display: block;
+}
+
+.youtube {
+  position: relative;
+  display: inline-block;
+}
+.youtube:before {
+  content: "";
+
+  position: absolute;
+  width: 20%;
+  height: 20%;
+  z-index: 10;
+  background: transparent url("assets/icon/play.png") center center no-repeat;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-size: contain;
+}
+.sabcimg {
+  height: 80;
+  width: 80;
+}
+.nativeAdvert {
+  height: 0;
+}
+
+#inner-content {
+  display: block;
+  margin-left: 50px;
+  margin-right: auto;
+  width: 330px;
+  height: 100%;
+}
+
+iframe {
+  border: 0;
+  width: 100%;
+}
+
+.new-twitter {
+  img {
+    width: 2.05rem;
+    height: 1.8rem;
+  }
+}
+
+.sabc-news-logo {
+  margin-left: 1.9rem;
+}
+
+.elementor-kit-825303 button {
+  display: none !important;
+}

@@ -1,0 +1,13 @@
+{
+  "name": "SABC-News",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyURL": "https://admin.mangomolo.com/analytics/index.php/plus/getchanneldetails?key=a970e24e7a7cca3a5e97bfe5d708a9dd&user_id=194&channel_id=324&need_playback=yes"
+    }
+  ],
+  "type": "angular"
+}

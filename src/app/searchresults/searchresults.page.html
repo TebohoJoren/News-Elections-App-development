@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title   class="ion-no-padding">
+      <ion-row class="ion-padding">
+        <ion-col  class="ion-no-padding">
+          <div class="sabc-news-logo">
+            <img src="/assets/sabc-news-logo.svg" />
+          </div>
+          <div class="sabc-independant-impartial ion-float-right">
+            <img src="/assets/img-independent-impartial-logo.jpg" />
+          </div>
+        </ion-col>
+        <ion-col>
+          <!--<div class="ion-float-right">
+              <ion-icon
+                button
+                name="search"
+                md="md-search"
+                [routerLink]="['/tabs/news/search']"
+                routerDirection="forward"
+              ></ion-icon>
+            </div>-->
+        </ion-col>
+      </ion-row>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-searchbar
+class="ion-no-padding"
+  [(ngModel)]="searchWord"
+  (search)="searchArticle($event)"
+>
+</ion-searchbar>
+
+<ion-content #content>
+  <ion-label *ngIf="!searchResults" class="submenu">No search found</ion-label>
+  <ion-list>
+    <ion-grid fixed="false">
+      <ion-item
+        class="ion-no-padding"
+        button
+        *ngFor="let article of data"
+        [routerLink]="'/tabs/news/' + article.id"
+        routerDirection="forward"
+      >
+        <ion-grid>
+          <ion-row [innerHTML]="article.title.rendered"></ion-row>
+          <ion-row class="date">{{
+            article.date | date: "dd MMMM yyyy, h:mm a"
+          }}</ion-row>
+        </ion-grid>
+        <ion-thumbnail slot="end" *ngIf="article?._embedded['wp:featuredmedia']">
+          <img [src]="article?._embedded['wp:featuredmedia']['0']?.source_url" alt="" />
+        </ion-thumbnail>
+      </ion-item>
+
+      <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="Loading more data..."
+        >
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </ion-grid>
+  </ion-list>
+</ion-content>

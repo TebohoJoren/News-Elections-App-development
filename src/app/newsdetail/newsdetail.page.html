@@ -1,0 +1,152 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button text="" (click)="stopReading()"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="ion-no-padding">
+      <ion-row class="ion-padding">
+        <ion-col class="ion-no-padding">
+          <div class="sabc-news-logo">
+            <img src="/assets/sabc-news-logo.svg" />
+          </div>
+          <div class="sabc-independant-impartial ion-float-right">
+            <img src="/assets/img-independent-impartial-logo.jpg" />
+          </div>
+        </ion-col>
+        <ion-col>
+          <ion-icon
+            *ngIf="bookmarked"
+            class="ion-float-right"
+            name="star-outline"
+            (click)="bookmarkArticle()"
+          ></ion-icon>
+          <ion-icon
+            *ngIf="!bookmarked"
+            class="ion-float-right star-outline"
+            name="star"
+            (click)="removeBookmark()"
+          ></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-grid>
+      <ion-thumbnail item-end *ngIf="article?._embedded['wp:featuredmedia']">
+        <img
+          [src]="article?._embedded['wp:featuredmedia']['0']?.source_url"
+          alt=""
+        />
+      </ion-thumbnail>
+      <ion-grid>
+        <div
+          class="captionFirst"
+          *ngIf="article && article.feature_image_caption"
+        >
+          <span [innerHTML]="article.feature_image_caption"></span> Picture:
+          <span
+            [innerHTML]="
+              article.feature_image_credit != null
+                ? article.feature_image_credit
+                : 'SABC News'
+            "
+          ></span>
+        </div>
+
+        <div
+          class="captionSecond"
+          [innerHTML]="
+        article != null &&
+        article.title != null &&
+        article.title.rendered != null
+          ? article.title.rendered
+          : ''
+      "
+        ></div>
+
+        <ion-row class="date" *ngIf="article && article.date"
+          >{{ article.date | date: "dd MMMM yyyy, h:mm a" }}</ion-row
+        >
+        <ion-row
+          class="date"
+          *ngIf="article && article.author_to_credit_display"
+          >{{ article.author_to_credit_display }}</ion-row
+        >
+
+        <button
+          *ngIf="article != null"
+          class="read-buttons"
+          id="start-read"
+          (click)="readTextOnScreen()"
+        >
+          <ion-icon name="megaphone"></ion-icon>
+          <b>Listen To This</b>
+        </button>
+
+        <button class="read-buttons" id="stop-read" (click)="stopReading()">
+          <ion-icon name="stop-circle"></ion-icon>
+          <b>Stop Reader</b>
+        </button>
+
+        <!-- <ion-item class="ion-no-padding">
+            <div
+              id="inner-content"
+              #NewsAd2>
+            </div>
+        </ion-item> -->
+
+        <div
+          #dynamic
+          [innerHTML]="
+            article != null &&
+            article.content != null &&
+            article.content.rendered != null
+              ? article.content.rendered
+              : ''
+          "
+        ></div>
+      </ion-grid>
+    </ion-grid>
+  </ion-list>
+</ion-content>
+<footer>
+  <ion-fab ion-padding vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="share"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button (click)="smsShare()">
+        <ion-icon name="send"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="whatsappShare()">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="facebookShare()">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="twitterShare()">
+        <img src="../../assets/twitter-x logo-png-white.png" alt="" />
+        <!-- <ion-icon name="logo-twitter"></ion-icon> -->
+      </ion-fab-button>
+      <ion-fab-button (click)="allShare()">
+        <i class="fa fa-share-alt"></i>
+      </ion-fab-button>
+      <!-- <ion-fab-button (click)="instagramShare()">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="telegramShare()">
+        <i class="fa-brands fa-share-alt"></i>
+      </ion-fab-button>
+      <ion-fab-button (click)="emailShare()">
+        <ion-icon name="mail-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="messangerShare()">
+        <i class="fa-brands fa-facebook-messenger"></i>
+      </ion-fab-button> -->
+    </ion-fab-list>
+  </ion-fab>
+</footer>

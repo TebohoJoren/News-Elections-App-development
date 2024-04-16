@@ -1,0 +1,137 @@
+<!-- <ion-app>
+  <ion-router-outlet></ion-router-outlet>
+</ion-app> -->
+
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content">
+      <ion-header translucent="true">
+        <ion-toolbar>
+          <ion-title>SABC News</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item
+              [routerDirection]="'root'"
+              [routerLink]="'/'"
+              routerDirection="forward"
+            >
+              <ion-icon slot="start" name="home"></ion-icon>
+              <ion-label>Home</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <!-- <ion-menu-toggle auto-hide="false">
+            <ion-item
+              [routerLink]="'/elections/'" >
+              <ion-icon slot="start" name="close"></ion-icon>
+              <ion-label>Election Results</ion-label>
+            </ion-item>
+          </ion-menu-toggle>  -->
+          <!-- <ion-menu-toggle auto-hide="false">
+            <ion-item
+            [routerDirection]="'root'"
+            [routerLink]="'/tabs/news/cat/352513'"
+            routerDirection="forward" >
+              <ion-icon slot="start" name="analytics"></ion-icon>
+              <ion-label>Election 2021</ion-label>
+            </ion-item>
+          </ion-menu-toggle> -->
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+            <ion-item (click)="openSocialAccount(p.link)">
+              <ion-icon
+                slot="start"
+                [name]="p.thumbnail"
+                onload="change(p.thumbnail)"
+              ></ion-icon>
+              <ion-label>
+                {{ p.title }}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="false" class="new-twitter">
+            <ion-item (click)="openX()">
+              <img src="../assets/Twitter X.png" alt="" slot="start" />
+              <ion-label> @SABCNEWS </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="false">
+            <ion-item (click)="openFB()">
+              <ion-icon slot="start" name="logo-facebook"></ion-icon>
+              <ion-label> @SABCNEWS </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="false">
+            <ion-item (click)="openYouTube()">
+              <!-- <ion-icon
+                style="color: #282828"
+                slot="start"
+                name="logo-youtube"
+              ></ion-icon> -->
+
+              <img
+                src="../assets/yt_icon_mono_light.png"
+                slot="start"
+                style="width: 1.95rem; min-height: 20px"
+              />
+              <ion-label> @SABCNEWS </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="true">
+            <ion-item (click)="openElections()">
+              <ion-icon slot="start" name="analytics"></ion-icon>
+              <ion-label>Elections</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+
+          <ion-menu-toggle auto-hide="false">
+            <ion-item (click)="openEmail()">
+              <ion-icon slot="start" name="mail"></ion-icon>
+              <ion-label>Contact us</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item (click)="openPrivacyPolicies()">
+              <ion-icon slot="start" name="time"></ion-icon>
+              <ion-label>Privacy policies</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <!-- <ion-menu-toggle auto-hide="false">
+            <ion-item (click)="openTermsConditions()">
+              <ion-icon slot="start" name="terms-and-conditions"></ion-icon>
+              <ion-label>Terms and conditions</ion-label>
+            </ion-item>
+          </ion-menu-toggle> -->
+          <ion-menu-toggle auto-hide="false">
+            <ion-item
+              [routerDirection]="'root'"
+              [routerLink]="'/tabs/settings/'"
+              routerDirection="forward"
+              (click)="ok()"
+            >
+              <ion-icon slot="start" name="cog"></ion-icon>
+              <ion-label>Settings</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>
+
+<!--
+  <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+              <ion-icon slot="start" [name]="p.icon"></ion-icon>
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+-->

@@ -1,0 +1,313 @@
+<ion-header>
+  <ion-toolbar color="dark" class="header-tool">
+    <ion-buttons slot="start">
+      <ion-menu-button>
+        <img class="menu-button" src="/assets/menu.png" />
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-no-padding">
+      <ion-row class="ion-padding">
+        <ion-col class="ion-no-padding">
+          <div class="sabc-news-logo">
+            <img src="/assets/sabc-news-logo.svg" />
+          </div>
+          <div class="sabc-independant-impartial ion-float-right">
+            <img src="/assets/img-independent-impartial-logo.jpg" />
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="ion-float-right">
+            <ion-icon name="search-outline" [routerLink]="['/tabs/news/search']" routerDirection="forward"></ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-toolbar
+  color="dark"
+  class="sub-nav"
+  [style.display]="elections == true ? 'block' : 'none'"
+>
+  <div class="fixed">
+    <ion-list color="dark">
+      <ion-button
+        fill="clear"
+        size="medium"
+        (click)="filterArticles(222167)"
+        [class.selected]="currentCategory == (222167).toString()"
+      >
+        <ion-label>ELECTIONS 2019</ion-label>
+      </ion-button>
+      <ion-button
+        fill="clear"
+        size="medium"
+        (click)="filterArticles(222168)"
+        [class.selected]="currentCategory == (222168).toString()"
+      >
+        <ion-label>ELECTIONS 2019 - News</ion-label>
+      </ion-button>
+      <ion-button
+        fill="clear"
+        size="medium"
+        [routerDirection]="'root'"
+        [routerLink]="'/tabs/elections/'"
+        routerDirection="forward"
+      >
+        <ion-label>RESULTS 2019</ion-label>
+      </ion-button>
+      <ion-button
+        fill="clear"
+        size="medium"
+        (click)="filterArticles(222169)"
+        [class.selected]="currentCategory == (222169).toString()"
+      >
+        <ion-label>VOTER INFO</ion-label>
+      </ion-button>
+      <ion-button
+        fill="clear"
+        size="medium"
+        (click)="filterArticles(222170)"
+        [class.selected]="currentCategory == (222170).toString()"
+      >
+        <ion-label>PARTIES</ion-label>
+      </ion-button>
+      <ion-button
+        fill="clear"
+        size="medium"
+        (click)="filterArticles(222171)"
+        [class.selected]="currentCategory == (222171).toString()"
+      >
+        <ion-label>ANALYSIS</ion-label>
+      </ion-button>
+      <ion-button
+        fill="clear"
+        size="medium"
+        (click)="filterArticles(231017)"
+        [class.selected]="currentCategory == (231017).toString()"
+      >
+        <ion-label>DEMOCRACY GAUGE</ion-label>
+      </ion-button>
+    </ion-list>
+  </div>
+</ion-toolbar> -->
+<ion-toolbar *ngIf="!showSearch" color="dark" class="sub-nav" [style.display]="elections === true ? 'none' : 'block'">
+  <div class="fixed bottomMargin">
+    <label class="item item-input item-select">
+      <div class="input-label"></div>
+
+      <select class="select-selected" name="ab" [(ngModel)]="catid" (change)="filterArticles($event.target.value)">
+        <option value="null" selected>LATEST</option>
+        <!--<option value="352513">ELECTIONS</option> -->
+        <option value="5">SOUTH AFRICA</option>
+        <!-- <option value="2">POLITICS</option> -->
+        <option value="15">BUSINESS</option>
+        <option value="6">SPORT</option>
+        <!-- <option value="3">AFRICA</option> -->
+        <option value="12">WORLD</option>
+        <option value="34">OPINION</option>
+
+        <!-- <option value="16">SCI-TECH</option> -->
+        <!-- <option value="4">LIFESTYLE</option> -->
+
+        <!-- <option value="37">FEATURES</option> -->
+      </select>
+    </label>
+
+    <label class="item item-input item-select category">
+      <div class="input-label"></div>
+      <select class="select-selected" placeholder="select category" name="ab" [(ngModel)]="subCatId"
+        (change)="filterSubCat($event.target.value)">
+        <option value="null" selected>ELECTIONS</option>
+        <option value="396623">ELECTION NEWS</option>
+        <option value="election_result">ELECTION RESULTS</option>
+      </select>
+    </label>
+  </div>
+</ion-toolbar>
+
+<!-- <ion-row class="electionButton">
+  <ion-col size="12" >  
+    <ion-button type="button" expand="full" color="dark" [routerLink]="'/elections'">
+      CLICKS FOR ELECTION RESULTS
+    </ion-button>
+  </ion-col>
+</ion-row>  -->
+
+<ion-content #content>
+  <!-- /267159116/SABCDigitalNewsMobileLeaderboard2 -->
+  <!-- <ion-list>
+    <ion-item class="ion-no-padding">
+      <button ion-button style="width: 100% !important" 
+      (click)="showInterstitialAd()">Interstitial Ad</button>
+
+      <button ion-button style="width: 100% !important" 
+      (click)="showRewardedAd()">Rewarded Ad </button>
+    </ion-item> 
+ </ion-list>  -->
+
+  <div class="banner-landscape" *ngIf="showBanner">
+    <img src="/assets/banner-landscape.jpg" />
+  </div>
+
+  <!-- <ion-item class="ion-no-padding">
+    <div id="inner-content" #NewsAd1>
+    </div>
+  </ion-item> -->
+
+  <ion-list *ngIf="subCatId !== 'election_result'">
+    <ion-grid fixed="false">
+      <ion-item [style.display]="businessCategory == true ? 'block' : 'none'" class="iframe-wrapper">
+        <ion-content scroll="true" overflow-scroll="true">
+          <div #currencyIframe></div>
+        </ion-content>
+      </ion-item>
+
+      <!-- <ion-item class="ion-no-padding">
+        <ion-content scroll="true" overflow-scroll="true">
+         <div id="native-ad" style="width: 100%; height: 100px"></div>
+        </ion-content>
+     </ion-item>  -->
+
+      <ion-item detail="false" class="ion-no-padding" button *ngFor="let article of data"
+        [routerLink]="'/tabs/news/' + article.id" routerDirection="forward">
+        <ion-grid>
+          <ion-row class="list-title" [innerHTML]="article.title.rendered"></ion-row>
+          <ion-row class="date">{{ article.date | date: "dd MMMM yyyy, h:mm a" }}
+          </ion-row>
+        </ion-grid>
+        <ion-thumbnail slot="end" *ngIf="article?._embedded['wp:featuredmedia']">
+          <img class="image-thumbnail" [src]="article?._embedded['wp:featuredmedia']['0']?.source_url" alt="" />
+        </ion-thumbnail>
+        <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+      </ion-item>
+
+      <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </ion-grid>
+
+    <!-- <ion-button
+      color="dark"
+      expand="full"
+      fill="clear"
+      (click)="showMoreResults()"
+      >More</ion-button
+    > -->
+  </ion-list>
+  <div class="election-results" *ngIf="subCatId == 'election_result'">
+    <div class="segment">
+      <ion-segment mode="ios" [(ngModel)]="segmentVal" (ionChange)="segmentChanged($event)">
+        <ion-segment-button value="live">
+          <ion-label>Live result</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="prediction">
+          <ion-label>Result prediction</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+    </div>
+
+    <div class="segment-data live" [ngSwitch]="segmentVal">
+      <div class="segment-part" *ngSwitchCase="'live'">
+        <p>LIVE</p>
+
+      </div>
+
+      <div class="segment-part prediction" *ngSwitchCase="'prediction'">
+        <p>PREDICTION</p>
+
+      </div>
+
+      <div class="segment-part landing" *ngSwitchCase="">
+        <section>
+          <div>
+            <div class="title">
+              <ion-label>Result</ion-label>
+            </div>
+            <div class="content">
+              <div class="regions">
+                <ion-col>
+                  <div>
+                    <p>National</p>
+                  </div>
+                </ion-col>
+                <ion-col class="middle">
+                  <div>
+                    <p>Regional <ion-icon name="caret-down-outline"></ion-icon></p>
+                  </div>
+                </ion-col>
+                <ion-col>
+                  <div>
+                    <p>Provincial <ion-icon name="caret-down-outline"></ion-icon></p>
+                  </div>
+                </ion-col>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="negative-margin">
+          <div>
+            <div class="top-title">
+              <ion-label>Top Three Parties</ion-label>
+            </div>
+            <div class="top-content">
+              <div class="col-parent">
+                <ion-col>
+                  <ion-label>
+                    Party 1
+                  </ion-label>
+                  <div class="votes">
+                    <p>#Vote 0% Support</p>
+                  </div>
+                </ion-col>
+                <ion-col>
+                  <ion-label>
+                    Party 2
+                  </ion-label>
+                  <div class="middle votes">
+                    <p>#Vote 5% Support</p>
+                  </div>
+                </ion-col>
+                <ion-col>
+                  <ion-label>
+                    Party 3
+                  </ion-label>
+                  <div class="votes">
+                    <p>#Vote 10% Support</p>
+                  </div>
+                </ion-col>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <ion-button>
+            Election Statistic
+            <div class="icons">
+              <ion-icon name="open-outline"></ion-icon>
+            </div>
+          </ion-button>
+        </section>
+
+        <section>
+          <ion-button>
+            Party Result
+            <div class="icons">
+              <ion-icon name="bar-chart-outline"></ion-icon>
+              <ion-icon name="apps-outline"></ion-icon>
+              <ion-icon name="open-outline"></ion-icon>
+            </div>
+          </ion-button>
+        </section>
+
+      </div>
+    </div>
+
+  </div>
+</ion-content>
